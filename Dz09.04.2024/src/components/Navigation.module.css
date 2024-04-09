@@ -1,0 +1,21 @@
+nav {
+  background-color:rgb(214, 214, 214);
+  border-radius:7px;
+  padding: 10px;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+li {
+  display: inline;
+  margin-right: 10px;
+}
+a {
+  text-decoration: none;
+  color:black;
+  transition:.15s;
+}
+a:hover {color:brgb(63, 63, 63);}
+a:active {transform:scale(0.97);}
