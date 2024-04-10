@@ -1,0 +1,23 @@
+.product-card {
+    border: 2px ridge gray;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+    border-radius: 7px;
+    padding: 10px;
+    margin: 10px;
+    width: 200px;
+    transition:.15s;
+}
+.product-card:hover { box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5); }
+.product-card:active { transform:scale(0.98); }
+.product-name {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+.product-price, .product-quantity, .total-product-price {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+.total-product-price {
+    font-size: 20px;
+    font-weight: bold;
+}
