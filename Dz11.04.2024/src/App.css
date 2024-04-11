@@ -1,0 +1,31 @@
+.app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.component {
+    background:linear-gradient(to bottom, rgb(225, 225, 225), rgb(178, 178, 178));
+    border: 3px ridge gray;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
+    box-shadow:2px 2px 4px rgb(0,0,0,0.6);
+    text-align: center;
+    transition:.15s;
+}
+.btn{
+    padding:6px;
+    background:rgb(195, 195, 195);
+    border:3px outset rgb(174, 174, 174);
+    border-radius:7px;
+    box-shadow:2px 2px 4px rgb(0,0,0,0.6);
+    font-size:1em;
+    outline:none;
+    transition:.15s;
+}
+.btn:hover{box-shadow:3px 3px 8px rgb(0,0,0,0.8);}
+.btn:active{
+    transform:scale(0.98);
+    border:3px ridge rgb(174, 174, 174);
+}
