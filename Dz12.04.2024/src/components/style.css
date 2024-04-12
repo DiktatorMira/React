@@ -1,0 +1,45 @@
+h2{
+    margin-top:2%;
+    text-align:center;
+}
+.forbut{
+    margin:5% auto;
+    width:20%;
+    height:5vh;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+.buttons{
+    height:100%;
+    width:20%;
+    background:rgb(201, 201, 201);
+    border:3px outset rgb(186, 186, 186);
+    border-radius:7px;
+    box-shadow:1px 1px 4px rgb(0,0,0,0.5);
+    font-size:1.1em;
+    outline:none;
+    transition:.15s;
+}
+.buttons:hover{box-shadow:2px 2px 7px rgb(0,0,0,0.6);}
+.buttons:active{
+    transform:scale(0.98);
+    border:3px ridge rgb(186, 186, 186);
+}
+.theme{
+    margin:1% 0 0 44%;
+    height:5vh;
+    width:12%;
+    background:rgb(201, 201, 201);
+    border:3px outset rgb(186, 186, 186);
+    border-radius:7px;
+    box-shadow:1px 1px 4px rgb(0,0,0,0.5);
+    font-size:1.1em;
+    outline:none;
+    transition:.15s;
+}
+.theme:hover{box-shadow:2px 2px 7px rgb(0,0,0,0.6);}
+.theme:active{
+    transform:scale(0.98);
+    border:3px ridge rgb(186, 186, 186);
+}
