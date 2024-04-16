@@ -1,0 +1,110 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  -webkit-user-drag:none;
+  user-select:none;
+}
+.top{
+  margin:1% auto;
+  height:55vh;
+  width:40%;
+  background:rgb(215, 215, 215);
+  box-shadow:1px 1px 5px rgb(0,0,0,0.6);
+  border-radius: 7px;
+  display:flex;
+  align-items:center;
+}
+.left{
+  height:100%;
+  width:43%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+.image{
+  height:90%;
+  width:100%;
+}
+.file-wrapper {
+  position: relative;
+  display: inline-block;
+}
+.file-button {
+  margin-top:2%;
+  display: inline-block;
+  padding: 3px 20px;
+  background-color: rgb(161, 161, 161);
+  border: 3px outset rgb(161, 161, 161);
+  border-radius: 7px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+  font-size:1em;
+  cursor: pointer;
+  transition:.15s;
+}
+.file-button:hover{box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);}
+.file-button:active{
+  transform:scale(0.97);
+  border: 3px ridge rgb(161, 161, 161);
+}
+.file-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+.file-input:hover{box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);}
+.file-input:active{
+  transform:scale(0.97);
+  border: 3px ridge rgb(161, 161, 161);
+}
+.right{
+  margin-left:.7%;
+  height:100%;
+  width:56%;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  align-items:center;
+}
+.forslider{
+  height:10%;
+  width:95%;
+  display:flex;
+  flex-direction:column;
+}
+.forslider span{margin-left:2%;}
+.savebtn{
+  height:4vh;
+  width:40%;
+  background-color: rgb(161, 161, 161);
+  border: 3px outset rgb(161, 161, 161);
+  border-radius: 7px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+  font-size:1em;
+  cursor: pointer;
+  transition:.15s;
+}
+.savebtn:hover{box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);}
+.savebtn:active{
+  transform:scale(0.97);
+  border: 3px ridge rgb(161, 161, 161);
+}
+.bottom{
+  margin:1% auto;
+  height:auto;
+  width:90%;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+}
+.images{
+  margin:.5%;
+  height:30vh;
+  width:12%;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+  border-radius:7px;
+}
