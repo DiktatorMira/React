@@ -1,22 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 
 export default function Images() {
     const [selectedImage, setSelectedImage] = useState(null);
     const [filters, setFilters] = useState({
         blur: 0,
-        brightness: 1,
-        contrast: 1,
+        brightness: 100,
+        contrast: 100,
         grayscale: 0,
-        hueRotate: 0,
+        hue_rotate: 0,
         invert: 0,
-        saturate: 1,
-        opacity: 1,
+        opacity: 100,
+        saturate: 100,
         sepia: 0
     });
     const [savedImages, setSavedImages] = useState([]);
     const [imageLoaded, setImageLoaded] = useState(false);
+    const imageRef = useRef(null);
 
-    const handleFileChange = (e) => {
+    const handleChangePhoto = (e) => {
         const file = e.target.files[0];
         const reader = new FileReader();
         reader.onload = () => {
@@ -26,7 +27,33 @@ export default function Images() {
         reader.readAsDataURL(file);
     };
 
+    const handleChange = e => {
+        setFilters(prevFilters => ({
+            ...prevFilters,
+            [e.target.name]: e.target.value
+        }));
+        applyFilters();
+    };
+
     const applyFilters = () => {
+        if (selectedImage && imageRef.current) {
+            const { blur, brightness, contrast, grayscale, hue_rotate, invert, opacity, saturate, sepia } = filters;
+            const filterStyle = `
+                blur(${blur}px)
+                brightness(${brightness}%)
+                contrast(${contrast}%)
+                grayscale(${grayscale}%)
+                hue-rotate(${hue_rotate}deg)
+                invert(${invert}%)
+                opacity(${opacity}%)
+                saturate(${saturate}%)
+                sepia(${sepia}%)
+            `;
+            imageRef.current.style.filter = filterStyle;
+        }
+    };
+
+    const handleSave = () => {
         if (selectedImage) {
             const canvas = document.createElement('canvas');
             const ctx = canvas.getContext('2d');
@@ -36,45 +63,43 @@ export default function Images() {
                 canvas.height = img.height;
                 ctx.filter = getFilterString();
                 ctx.drawImage(img, 0, 0, img.width, img.height);
-                setSelectedImage(canvas.toDataURL());
+                const savedImageUrl = canvas.toDataURL();
+                setSavedImages(prevImages => [...prevImages, savedImageUrl]);
             };
             img.src = selectedImage;
         }
     };
+
     const getFilterString = () => {
-        let filterString = '';
-        for (const key in filters) {
-            filterString += `${key}(${filters[key]}) `;
-        }
-        return filterString.trim();
-    };
-    const handleSave = () => {
-        if (selectedImage) setSavedImages(prevImages => [...prevImages, selectedImage]);
-    };
-    const handleFilterChange = (e) => {
-        const { name, value } = e.target;
-        setFilters(prevFilters => ({
-            ...prevFilters,
-            [name]: value
-        }));
-        applyFilters(); // Вызываем функцию для применения фильтров
+        const { blur, brightness, contrast, grayscale, hue_rotate, invert, opacity, saturate, sepia } = filters;
+        return `
+            blur(${blur}px)
+            brightness(${brightness}%)
+            contrast(${contrast}%)
+            grayscale(${grayscale}%)
+            hue-rotate(${hue_rotate}deg)
+            invert(${invert}%)
+            opacity(${opacity}%)
+            saturate(${saturate}%)
+            sepia(${sepia}%)
+        `;
     };
 
     return (
         <>
             <section className='top'>
                 <div className='left'>
-                    <img className='image' alt='' style={{ filter: getFilterString() }} src={selectedImage}></img>
+                    <img ref={imageRef} className='image' alt='' src={selectedImage}></img>
                     <div className="file-wrapper">
                         <label htmlFor="file" className="file-button">Выбрать файл</label>
-                        <input id="file" type="file" className="file-input" onChange={handleFileChange} />
+                        <input id="file" type="file" className="file-input" onChange={handleChangePhoto} />
                     </div>
                 </div>
                 <div className='right'>
                     {Object.entries(filters).map(([filter, value]) => (
                         <div className='forslider' key={filter}>
-                            <span>{filter}: {value}</span>
-                            <input name={filter}  type="range" min="0" max={filter === 'hueRotate' ? "360" : "2"} step={filter === 'hueRotate' ? "1" : "0.01"} value={value} onChange={handleFilterChange} disabled={!imageLoaded}/>
+                            <span>{filter.replace('_', '-')} : {value}</span>
+                            <input name={filter} type="range" min="0" max={filter === 'hue_rotate' ? "360" : "200"} value={value} onChange={handleChange} disabled={!imageLoaded} />
                         </div>
                     ))}
                     <button className='savebtn' onClick={handleSave}>Сохранить</button>
@@ -82,8 +107,8 @@ export default function Images() {
             </section>
             {savedImages.length > 0 && (
                 <section className='bottom'>
-                    {savedImages.map((image, index) => (
-                        <img className='images' key={index} alt='' src={image}></img>
+                    {savedImages.map((imageUrl, index) => (
+                        <img className='images' key={index} alt='' src={imageUrl}></img>
                     ))}
                 </section>
             )}
