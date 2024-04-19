@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1, h2{text-align:center;}
+.item {
+    margin:5%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 50px;
+    height: 86px;
+    border-radius: 7px;
+    box-shadow:2px 2px 6px rgb(0,0,0,0.4);
+    font-size:1em;
+    color:black;
+    background-color: rgb(203, 203, 203);
+    cursor: pointer;
+    transition: .15s;
+}
+.item:hover { box-shadow:3px 3px 8px rgb(0,0,0,0.6); }
+.item:active { transform:scale(0.97);}
+.Link {text-decoration: none;}
+.row {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    background-color:rgb(235, 235, 235);
+    box-shadow:2px 2px 6px rgb(0,0,0,0.4);
+    border-radius:7px;
+    padding: 16px;
+}
+.menu {
+    font-size:1em;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+}
+.menu li { margin-right: 20px;}
+.menu li:last-child { margin-right: 0; }
+.menu li a {
+    text-decoration: none;
+    padding:5px 30px;
+    background:rgb(218, 218, 218);
+    box-shadow:2px 2px 6px rgb(0,0,0,0.4);
+    border-radius:7px;
+    color: #333;
+    font-size:1.5em;
+    transition:.15s;
+}
+.menu li a:hover { color: #007bff; }
+.menu li a:active { transform:scale(0.98); }
+.container {
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    font-size:1.4em;
+    margin: 20px auto;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+.product-list-title {
+    font-size: 24px;
+    margin-bottom: 16px;
+    color: #333;
+}
+.product-item {
+    margin-bottom: 20px;
+    padding: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s ease;
+}
+.product-item:hover { background-color: #e6e6e6;}
+.product-item h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+    color: #333;
+}
+.product-item p {
+    font-size: 16px;
+    color: #666;
+}
+.product-page-title {
+    font-size: 32px;
+    margin-bottom: 16px;
+    color: #333;
+}
+.product-page-info {
+    font-size: 20px;
+    color: #666;
+}
