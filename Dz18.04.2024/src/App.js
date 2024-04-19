@@ -7,6 +7,7 @@ import About from "./pages/about";
 import NotFound from "./pages/notFound";
 import Layout from "./components/layout";
 import ProductPage from "./components/productPage";
+import AdminPanel from "./pages/adminPanel";
 import { ProductProvider } from "./components/productsContext";
 
 export default function App() {
@@ -19,20 +20,23 @@ export default function App() {
       ),
       children: [ {
           path: "/",
-          element: <Home />,
+          element: <Home />
         }, {
           path: "/Contact",
-          element: <Contact />,
+          element: <Contact />
         }, {
           path: "/About",
-          element: <About />,
+          element: <About />
         }, {
           path: "/product/:id",
-          element: <ProductPage />,
+          element: <ProductPage />
+        }, {
+          path: "/admin",
+          element: <AdminPanel />
         }, {
           path: "*",
-          element: <NotFound />,
-        },
+          element: <NotFound />
+        }
       ],
     }, {},
   ]);

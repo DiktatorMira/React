@@ -97,3 +97,48 @@ h1, h2{text-align:center;}
     font-size: 20px;
     color: #666;
 }
+.admin-form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 7px;
+    box-shadow:1px 1px 7px rgb(0,0,0,0.5);
+    background-color: #e4e4e4;
+}
+.admin-form label {
+    display: block;
+    margin-bottom: 10px;
+}
+.inputs {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border:none;
+    outline:none;
+    background:white;
+    box-shadow:1px 1px 4px rgb(0,0,0,0.5);
+    font-size:1em;
+    border-radius: 5px;
+    transition:.15s;
+}
+.inputs:hover{ box-shadow:2px 2px 7px rgb(0,0,0,0.6); }
+.inputs:active{transform:scale(0.98);}
+.inputs:focus{border:1px solid gray;}
+.admin-form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color:rgb(192, 192, 192);
+    border:3px outset rgb(174, 174, 174);
+    border-radius:7px;
+    box-shadow:1px 1px 4px rgb(0,0,0,0.5);
+    font-size:1em;
+    cursor: pointer;
+    transition:.15s;
+}
+.admin-form button:hover { box-shadow:2px 2px 6px rgb(0,0,0,0.6); }
+.admin-form button:active{
+    border:3px ridge rgb(174, 174, 174);
+    transform:scale(0.98);
+}

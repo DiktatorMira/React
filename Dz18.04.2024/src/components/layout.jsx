@@ -16,6 +16,9 @@ export default function Layout() {
             <li>
               <Link to="/About">About</Link>
             </li>
+            <li>
+              <Link to="/admin">AdminPanel</Link>
+            </li>
           </ul>
         </nav>
       </header>
