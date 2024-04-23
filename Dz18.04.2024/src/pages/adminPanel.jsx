@@ -3,7 +3,7 @@ import { useProducts } from "../components/productsContext";
 
 export default function AdminPanel() {
     const [newProduct, setNewProduct] = useState({ title: "", price: "" });
-    const products = useProducts();
+    const { products, addProduct } = useProducts();
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setNewProduct({
@@ -17,6 +17,7 @@ export default function AdminPanel() {
         const id = products.length > 0 ? products[products.length - 1].id + 1 : 0;
         const newProductWithId = { ...newProduct, id };
         console.log("Добавлен новый продукт:", newProductWithId);
+        addProduct(newProductWithId);
         setNewProduct({ title: "", price: "" });
     };
     return (

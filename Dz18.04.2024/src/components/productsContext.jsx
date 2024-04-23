@@ -1,9 +1,9 @@
-import React, { createContext, useContext } from "react";
+import React, { createContext, useContext, useState } from "react";
 
 const ProductContext = createContext();
 
 export const ProductProvider = ({ children }) => {
-  const products = [
+  const initialProducts = [
     {
       title: "Мандарин",
       price: 70,
@@ -21,13 +21,23 @@ export const ProductProvider = ({ children }) => {
     },
   ];
 
+  const [products, setProducts] = useState(initialProducts);
+
+  const addProduct = (newProduct) => {
+    setProducts([...products, newProduct]);
+  };
+
   return (
-    <ProductContext.Provider value={products}>
+    <ProductContext.Provider value={{ products, addProduct }}>
       {children}
     </ProductContext.Provider>
   );
 };
 
 export const useProducts = () => {
-  return useContext(ProductContext);
+  const context = useContext(ProductContext);
+  if (!context) {
+    throw new Error("useProducts must be used within a ProductProvider");
+  }
+  return context;
 };
