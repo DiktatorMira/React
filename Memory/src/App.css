@@ -1,0 +1,129 @@
+:root{
+  --form-background:rgb(232, 232, 232);
+  --form-shadow:rgb(0,0,0,0.6);
+  --input-shadow:rgb(0,0,0,0.4);
+  --input-hover-shadow:rgb(0,0,0,0.5);
+  --input-border-focus:rgb(194, 194, 194);
+  --h-color:rgb(49, 49, 49);
+  --validation:red;
+  --button-background:rgb(211, 211, 211);
+  --href-color:rgb(11, 92, 231);
+  --card-border:rgb(168, 168, 168);
+}
+.forms{
+  margin:5% auto;
+  height:55vh;
+  width:25%;
+  border-radius:7px;
+  background:var(--form-background);
+  box-shadow:1px 1px 5px var(--form-shadow);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+.forms h1 {
+  font-size:1.6em;
+  color:var(--h-color);
+}
+.inplate{
+  margin-top:5%;
+  height:7vh;
+  width:90%;
+  display:flex;
+  flex-direction:column;
+}
+.inplate span{
+  font-size:1.05em;
+  color:var(--validation);
+}
+.inputs{
+  margin-top:1%;
+  padding-left:2%;
+  height:4vh;
+  width:100%;
+  border:none;
+  border-radius:7px;
+  box-shadow:1px 1px 4px var(--input-shadow);
+  outline:none;
+  font-size:1.1em;
+  transition:.15s;
+}
+.inputs:hover{box-shadow:2px 2px 6px var(--input-hover-shadow);}
+.inputs:active {transform:scale(0.98);}
+.inputs:focus{border:2px outset var(--input-border-focus);}
+.btn{
+  margin-top:3%;
+  height:4vh;
+  width:50%;
+  background:var(--button-background);
+  border:none;
+  border-radius:7px;
+  box-shadow:1px 1px 4px var(--input-shadow);
+  font-size:1.1em;
+  cursor: pointer;
+  transition:.15s;
+}
+.btn:hover{box-shadow:2px 2px 6px var(--input-hover-shadow);}
+.btn:active{transform:scale(0.97);}
+.htext{
+  margin-top:5%;
+  font-weight:bold;
+  font-size:1.2em;
+  color:var(--href-color);
+  transition:.15s;
+}
+.htext:hover{text-decoration:underline;}
+.small{font-size:1em;}
+.top{
+  margin:0 auto;
+  width:20%;
+  height:15vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+h1{
+  font-size:2em;
+  color:var(--h-color);
+  text-shadow:2px 2px 2px var(--input-hover-shadow);
+}
+.forinp{
+  height:6vh;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.sec{
+  margin:-1% 0 0 2%;
+  font-size:1.3em;
+}
+.cards{
+  margin:1.5% auto;
+  height:auto;
+  width:85%;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-evenly;
+}
+.card{
+  margin:.3%;
+  min-width:8%;
+  height: 22vh;
+  background:url(../public/textures/background.webp) center / contain no-repeat;
+  border:3px ridge var(--card-border);
+  border-radius:7px;
+  box-shadow:2px 2px 5px var(--input-hover-shadow);
+  cursor:pointer;
+  transition:.15s;
+}
+.card:hover{box-shadow:3px 3px 8px var(--form-shadow);}
+.card:active{transform:scale(0.97);}
+.user{
+  text-align:center;
+}
+.matched {
+  opacity:0.7;
+  pointer-events:none;
+}

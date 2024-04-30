@@ -1,0 +1,10 @@
+@font-face {
+  font-family: 'bahnscript';
+  src: url('../public/fonts/Bahnschrift.ttf') format('truetype');
+}
+body {
+  margin: 0;
+  font-family: 'bahnscript', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
